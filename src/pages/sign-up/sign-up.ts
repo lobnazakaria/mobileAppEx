@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { User } from '../../models/user';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the SignUpPage page.
@@ -14,12 +17,40 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'sign-up.html',
 })
 export class SignUpPage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  user = {} as User
+  constructor(private fireAuth: AngularFireAuth ,
+               public navCtrl: NavController,
+               public navParams: NavParams,
+               public alertCtrl : AlertController
+              ) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SignUpPage');
-  }
+  
 
+  
+
+
+   signUp(user : User){
+    
+      this.fireAuth.auth.createUserWithEmailAndPassword(user.email , user.password)
+      .then(data =>{
+        let alert = this.alertCtrl.create({
+          title: 'info',
+          subTitle: 'Registered !',
+          buttons: ['OK']
+        });
+        alert.present();
+      this.navCtrl.push(LoginPage);
+      })
+      .catch (error =>{
+        let alert = this.alertCtrl.create({
+          title: 'Alert',
+          subTitle: error.message,
+          buttons: ['OK']
+        });
+        alert.present();
+        console.log(error.message.toString());
+   });
+
+  }
 }

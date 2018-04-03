@@ -7,12 +7,30 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>signUp</ion-title>
+    <ion-title class="title">signUp</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="bg">
+    <div class="form">
+        <ion-list >
+    
+            <ion-item class="bg">
+              <ion-label floating>Username</ion-label>
+              <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+            </ion-item>
+          
+            <ion-item class="bg">
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+            </ion-item>
+          
+          </ion-list>
+        </div>
+          <div padding>
+              <button ion-button full class="sign" (click)="signUp(user)">SignUp</button>
+          </div>
 
 </ion-content>

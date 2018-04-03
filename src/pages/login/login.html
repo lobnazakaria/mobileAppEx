@@ -19,19 +19,19 @@
 
         <ion-item class="bg">
           <ion-label floating>Username</ion-label>
-          <ion-input type="text" #username></ion-input>
+          <ion-input type="text" [(ngModel)]="user.email"></ion-input>
         </ion-item>
       
         <ion-item class="bg">
           <ion-label floating>Password</ion-label>
-          <ion-input type="password" #password></ion-input>
+          <ion-input type="password" [(ngModel)]="user.password"></ion-input>
         </ion-item>
       
       </ion-list>
     </div>
       <div padding>
-          <button ion-button full class="sign" (click)="signIn()">SignIn</button>
-           <button ion-button full class="sign" (click)="toSignupPage()">SignUp</button>
+          <button ion-button full class="sign" (click)="signIn(user)">SignIn</button>
+           
       </div>
     
 </ion-content>
