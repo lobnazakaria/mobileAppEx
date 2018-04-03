@@ -25,18 +25,13 @@ export class SignUpPage {
               ) {
   }
 
-  
-
-  
-
-
-   signUp(user : User){
+  signUp(user : User){
     
       this.fireAuth.auth.createUserWithEmailAndPassword(user.email , user.password)
       .then(data =>{
         let alert = this.alertCtrl.create({
-          title: 'info',
-          subTitle: 'Registered !',
+          title: 'Registered !',
+          subTitle: ' will be directed to the login page',
           buttons: ['OK']
         });
         alert.present();
