@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../../models/user';
 import { LoginPage } from '../login/login';
+import { CreateProfilePage } from '../create-profile/create-profile';
 
 /**
  * Generated class for the SignUpPage page.
@@ -35,7 +36,7 @@ export class SignUpPage {
           buttons: ['OK']
         });
         alert.present();
-      this.navCtrl.push(LoginPage);
+      this.navCtrl.setRoot(CreateProfilePage);
       })
       .catch (error =>{
         let alert = this.alertCtrl.create({
