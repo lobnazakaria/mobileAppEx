@@ -7,12 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>createProfile</ion-title>
+    <ion-title>Create Your Profile</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div class="form">
+    <ion-list >
 
+        <ion-item class="bg">
+          <ion-label floating>User Name</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.username"></ion-input>
+        </ion-item>
+      
+        <ion-item class="bg">
+          <ion-label floating>First Name</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.firstName"></ion-input>
+        </ion-item>
+
+        <ion-item class="bg">
+          <ion-label floating>Last Name</ion-label>
+          <ion-input type="text" [(ngModel)]="profile.lastName"></ion-input>
+        </ion-item>
+      
+      </ion-list>
+    </div>
+      <div padding>
+          <button ion-button full class="sign" (click)="createProfile()">Create Profile</button>
+      </div>
 </ion-content>

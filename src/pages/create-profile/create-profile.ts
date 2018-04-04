@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {Profile} from '../../models/profile';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { AfterLoginPage } from '../after-login/after-login';
 /**
  * Generated class for the CreateProfilePage page.
  *
@@ -14,12 +17,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'create-profile.html',
 })
 export class CreateProfilePage {
-
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  profile = {} as Profile;
+  constructor(public navCtrl: NavController,
+               public navParams: NavParams,
+               private fireAuth : AngularFireAuth,
+               private fireDatabase : AngularFireDatabase
+              ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CreateProfilePage');
+  }
+  createProfile(){
+    this.fireAuth.authState.take(1).subscribe(auth => {
+      this.fireDatabase.object(`profile/${auth.uid}`).set(this.profile)
+        .then(() => this.navCtrl.setRoot(AfterLoginPage));
+    })
   }
 
 }

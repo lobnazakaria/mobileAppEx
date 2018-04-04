@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AfterLoginPage } from '../pages/after-login/after-login';
 import { CreateProfilePage } from '../pages/create-profile/create-profile';
+import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
     authDomain: "mobileappex.firebaseapp.com",
@@ -33,7 +34,8 @@ const firebaseAuth={
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseAuth),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireDatabaseModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,6 +49,7 @@ const firebaseAuth={
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireDatabase,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
