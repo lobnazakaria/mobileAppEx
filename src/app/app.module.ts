@@ -10,6 +10,7 @@ import {LoginPage} from '../pages/login/login';
 import {SignUpPage} from '../pages/sign-up/sign-up';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AfterLoginPage } from '../pages/after-login/after-login';
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
     authDomain: "mobileappex.firebaseapp.com",
@@ -23,7 +24,8 @@ const firebaseAuth={
     MyApp,
     HomePage,
     LoginPage,
-    SignUpPage
+    SignUpPage,
+    AfterLoginPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ const firebaseAuth={
     MyApp,
     HomePage,
     LoginPage,
-    SignUpPage
+    SignUpPage,
+    AfterLoginPage
   ],
   providers: [
     StatusBar,

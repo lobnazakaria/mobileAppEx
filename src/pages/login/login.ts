@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../../models/user';
+import { AfterLoginPage } from '../after-login/after-login';
 
 /**
  * Generated class for the LoginPage page.
@@ -37,7 +38,7 @@ export class LoginPage {
           buttons: ['OK']
         });
         alert.present();
-        
+        this.navCtrl.setRoot(AfterLoginPage);
       })
       .catch(error => {
         let alert = this.alertCtrl.create({
