@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from '../../models/user';
-import { LoginPage } from '../login/login';
+
 import { CreateProfilePage } from '../create-profile/create-profile';
 
 /**
@@ -32,7 +32,7 @@ export class SignUpPage {
       .then(data =>{
         let alert = this.alertCtrl.create({
           title: 'Registered !',
-          subTitle: ' will be directed to the login page',
+          subTitle: ' ',
           buttons: ['OK']
         });
         alert.present();

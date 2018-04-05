@@ -13,6 +13,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AfterLoginPage } from '../pages/after-login/after-login';
 import { CreateProfilePage } from '../pages/create-profile/create-profile';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
+import { UploadImgPage } from '../pages/upload-img/upload-img';
+import { Camera } from 'ionic-native';
+
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
     authDomain: "mobileappex.firebaseapp.com",
@@ -21,6 +24,7 @@ const firebaseAuth={
     storageBucket: "mobileappex.appspot.com",
     messagingSenderId: "878589870793"
 }
+
 @NgModule({
   declarations: [
     MyApp,
@@ -28,7 +32,8 @@ const firebaseAuth={
     LoginPage,
     SignUpPage,
     AfterLoginPage,
-    CreateProfilePage
+    CreateProfilePage,
+    UploadImgPage
   ],
   imports: [
     BrowserModule,
@@ -44,12 +49,14 @@ const firebaseAuth={
     LoginPage,
     SignUpPage,
     AfterLoginPage,
-    CreateProfilePage
+    CreateProfilePage,
+    UploadImgPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     AngularFireDatabase,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

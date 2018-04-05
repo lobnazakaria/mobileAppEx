@@ -8,7 +8,12 @@
 
   <ion-navbar color="vio">
       
-      <button ion-button clear class="img-btn"><img class="img-responsive img" src="{{ myPhotoURL }}"><ion-icon class="icon" name="contact"></ion-icon></button>
+      <button ion-button clear class="img-btn" (click)="uploadImg()">
+          <img class="img-responsive img" src="{{ myPhotoURL }}">
+          <ion-icon class="icon" name="contact"></ion-icon>
+          <h5 class="user">{{(profileData|async)?.username}}</h5>
+        </button>
+        
   </ion-navbar>
 
 </ion-header>

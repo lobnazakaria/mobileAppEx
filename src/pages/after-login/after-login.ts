@@ -5,6 +5,7 @@ import { AngularFireDatabase, AngularFireObject  } from 'angularfire2/database';
 import {FirebaseObjectObservable} from'angularfire2/database-deprecated';
 import { Profile } from '../../models/profile';
 import { Observable } from 'rxjs/Observable';
+import { UploadImgPage } from '../upload-img/upload-img';
 /**
  * Generated class for the AfterLoginPage page.
  *
@@ -49,6 +50,10 @@ export class AfterLoginPage {
         }).present();
       }
     })
+  }
+
+  uploadImg(){
+    this.navCtrl.setRoot(UploadImgPage);
   }
 
 }
