@@ -16,6 +16,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { UploadImgPage } from '../pages/upload-img/upload-img';
 import { Camera } from 'ionic-native';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
     authDomain: "mobileappex.firebaseapp.com",
@@ -41,6 +42,8 @@ const firebaseAuth={
     AngularFireModule.initializeApp(firebaseAuth),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
+    FormsModule,
+     ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,6 +60,7 @@ const firebaseAuth={
     SplashScreen,
     AngularFireDatabase,
     Camera,
+    
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

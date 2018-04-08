@@ -13,28 +13,63 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div class="form">
-    <ion-list >
+<ion-content padding class="bg">
+  <form [formGroup]="profileForm">
 
-        <ion-item class="bg">
+      <ion-item>
           <ion-label floating>User Name</ion-label>
-          <ion-input type="text" [(ngModel)]="profile.username"></ion-input>
+          <ion-input formControlName="username" type="text"></ion-input>
+      </ion-item>
+ 
+    <ion-item>
+        <ion-label floating>First Name</ion-label>
+        <ion-input formControlName="firstName" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Last Name</ion-label>
+        <ion-input formControlName="lastName" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating>Age</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY" formControlName="age"></ion-datetime>
+    </ion-item>
+
+    
+      <ion-label>Gender</ion-label>
+      <ion-list radio-group formControlName="gender" >
+        <ion-item>
+          <ion-label >Male</ion-label>
+          <ion-radio value="male" checked></ion-radio>
         </ion-item>
-      
-        <ion-item class="bg">
-          <ion-label floating>First Name</ion-label>
-          <ion-input type="text" [(ngModel)]="profile.firstName"></ion-input>
+        <ion-item>
+          <ion-label>Female</ion-label>
+          <ion-radio value="female"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+      <ion-item >
+          <ion-label>Upload Profile Picture</ion-label>
+        </ion-item>
+        <ion-row >
+          <ion-col width-50>
+            <button ion-button color="primary" type="button" full round large (click)="takePhoto()">
+              <ion-icon name="md-camera"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button color="secondary" type="button" full round large (click)="selectPhoto()">
+              <ion-icon name="md-image"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+        <ion-item>
+          <img class="img-responsive" src="{{ myPhotoURL }}" />
         </ion-item>
 
-        <ion-item class="bg">
-          <ion-label floating>Last Name</ion-label>
-          <ion-input type="text" [(ngModel)]="profile.lastName"></ion-input>
-        </ion-item>
-      
-      </ion-list>
-    </div>
-      <div padding>
-          <button ion-button full class="sign" (click)="createProfile()">Create Profile</button>
-      </div>
+        <div padding>
+            <button ion-button full class="sign" (click)="createProfile()">Create Profile</button>
+        </div>
+</form>
 </ion-content>

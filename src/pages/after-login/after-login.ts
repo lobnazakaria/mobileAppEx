@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase, AngularFireObject  } from 'angularfire2/database';
-import {FirebaseObjectObservable} from'angularfire2/database-deprecated';
-import { Profile } from '../../models/profile';
+import { AngularFireDatabase } from 'angularfire2/database';
+
+
 import { Observable } from 'rxjs/Observable';
 import { UploadImgPage } from '../upload-img/upload-img';
 /**
@@ -20,9 +20,9 @@ import { UploadImgPage } from '../upload-img/upload-img';
 })
 export class AfterLoginPage {
   
-  
-  profileData :  Observable<any>;
-  
+  picUrl :UploadImgPage;
+ profileData :  Observable<any>;
+  profileUrl:Observable<any>;
   constructor(
     public navCtrl: NavController,
      public navParams: NavParams,
@@ -32,7 +32,14 @@ export class AfterLoginPage {
     ) {
   }
 
+  getStyle(){
+    if (true){
+      const style = `display: none`;
+    return style;
+    }
+  }
   ionViewDidLoad() {
+    console.log(this.profileData);
     this.fireAuth.authState.take(1).subscribe(data =>{
       if(data && data.email && data.uid){
         debugger
@@ -41,7 +48,8 @@ export class AfterLoginPage {
           duration:3000
         }).present();
         this.profileData=this.fireDatabase.object('profile/'+data.uid).valueChanges();
-        console.log(this.profileData)
+        this.profileUrl=this.fireDatabase.object('profile/'+data.photoURL).valueChanges();
+        console.log(this.profileData,this.profileUrl)
       }
       else {
         this.toastCtrl.create({
