@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-
-
 import { Observable } from 'rxjs/Observable';
 import { UploadImgPage } from '../upload-img/upload-img';
 /**
@@ -48,7 +46,7 @@ export class AfterLoginPage {
           duration:3000
         }).present();
         this.profileData=this.fireDatabase.object('profile/'+data.uid).valueChanges();
-        this.profileUrl=this.fireDatabase.object('profile/'+data.photoURL).valueChanges();
+        
         console.log(this.profileData,this.profileUrl)
       }
       else {
@@ -61,7 +59,7 @@ export class AfterLoginPage {
   }
 
   uploadImg(){
-    this.navCtrl.setRoot(UploadImgPage);
+    this.navCtrl.push(UploadImgPage);
   }
 
 }

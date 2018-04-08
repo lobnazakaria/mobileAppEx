@@ -15,7 +15,6 @@ import { CreateProfilePage } from '../pages/create-profile/create-profile';
 import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/database';
 import { UploadImgPage } from '../pages/upload-img/upload-img';
 import { Camera } from 'ionic-native';
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
@@ -43,7 +42,7 @@ const firebaseAuth={
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     FormsModule,
-     ReactiveFormsModule
+    ReactiveFormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
