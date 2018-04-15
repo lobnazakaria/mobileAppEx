@@ -1,15 +1,26 @@
 
-.icon{
-    font-size: 3em;
-    margin-right: 15px;
-    color: black;
+.icon-menu{
+    font-size: 1.69em;
+    
+    color: white;
+    
+}
+.icon-footer{
+    font-size: 1.5em;
+    color:white;
 }
 h5{
     color:white;
 }
 .img{
-    width:35px;
-    height: 35px;
-    border-radius: 50%;
-    margin-right: 15px;
+   border-radius: 50%;
+   width: 35px;
+   height: 35px;
+
+}
+.searchbar-md .searchbar-input {
+    border-radius: 25px !important;
+}
+.footer-bar{
+
 }

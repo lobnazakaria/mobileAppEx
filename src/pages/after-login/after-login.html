@@ -7,13 +7,27 @@
 <ion-header>
 
   <ion-navbar color="vio">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <button ion-button clear class="img-btn" (click)="uploadImg()">
+            <img class="img-responsive img" src="{{(profileData|async)?.photo}}"  >
+          </button>
+        </ion-col>
+        <ion-col col-7>
+          <ion-searchbar
+            (ionInput)="onInput($event)"
+            (animated)="true">
+          </ion-searchbar>
+        </ion-col>
+        <ion-col col-2>
+          <button ion-button clear class="icon-menu">
+            <ion-icon name="menu"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
       
-      <button ion-button clear class="img-btn" (click)="uploadImg()">
-          <img class="img-responsive img" src="{{(profileData|async)?.photo}}"  >
-          
-          <h5 class="user">{{(profileData|async)?.username}}</h5>
-        </button>
-        
   </ion-navbar>
 
 </ion-header>
@@ -22,3 +36,31 @@
 <ion-content padding>
   
 </ion-content>
+<ion-footer class="footer-bar">
+  <ion-navbar color="vio">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3>
+          <button ion-button clear class="icon-footer">
+            <ion-icon name="home"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button clear class="icon-footer">
+            <ion-icon name="notifications"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button clear class="icon-footer">
+            <ion-icon name="contacts"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button clear class="icon-footer">
+            <ion-icon name="chatbubbles"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-navbar>
+</ion-footer>
