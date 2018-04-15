@@ -28,8 +28,19 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item>
-        <img class="img-responsive" src="{{ myPhotoURL }}" />
+      <ion-item >
+      <div *ngIf="!clicked">
+        <img class="img-responsive" src="{{ (profileData|async)?.photo}}" />
+      </div>
       </ion-item>
-      <button ion-button clear (click)="upload()">Upload</button>
+
+
+      <form FormGroup="imageForm">
+        <div  *ngIf="clicked">
+          <ion-item>
+            <img class="img-responsive" src="{{myPhotoURL}}" />
+          </ion-item>
+          <button ion-button clear blocked  (click)="upload()">Upload</button>
+        </div>
+    </form>
 </ion-content>

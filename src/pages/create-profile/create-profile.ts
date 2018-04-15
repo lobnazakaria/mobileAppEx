@@ -140,12 +140,6 @@ export class CreateProfilePage implements OnInit {
 
   createProfile(){
    
-    
-    this.alertCtrl.create({
-      title: 'New Friend!',
-      subTitle:this.image,
-      buttons: ['OK']
-    }).present();
     this.profileForm.controls['photo'].setValue(this.image);
     this.profile=this.profileForm.value;
    
