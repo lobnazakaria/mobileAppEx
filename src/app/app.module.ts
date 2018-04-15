@@ -16,6 +16,8 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { UploadImgPage } from '../pages/upload-img/upload-img';
 import { Camera } from 'ionic-native';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserInfoPage } from '../pages/user-info/user-info';
+import { FooterBarPage } from '../pages/footer-bar/footer-bar';
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
     authDomain: "mobileappex.firebaseapp.com",
@@ -33,7 +35,9 @@ const firebaseAuth={
     SignUpPage,
     AfterLoginPage,
     CreateProfilePage,
-    UploadImgPage
+    UploadImgPage,
+    UserInfoPage,
+    FooterBarPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,9 @@ const firebaseAuth={
     SignUpPage,
     AfterLoginPage,
     CreateProfilePage,
-    UploadImgPage
+    UploadImgPage,
+    UserInfoPage,
+    FooterBarPage
   ],
   providers: [
     StatusBar,

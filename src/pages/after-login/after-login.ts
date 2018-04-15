@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 import { UploadImgPage } from '../upload-img/upload-img';
+import { UserInfoPage } from '../user-info/user-info';
 /**
  * Generated class for the AfterLoginPage page.
  *
@@ -59,7 +60,7 @@ export class AfterLoginPage {
   }
 
   uploadImg(){
-    this.navCtrl.push(UploadImgPage);
+    this.navCtrl.setRoot(UserInfoPage);
   }
 
 }
