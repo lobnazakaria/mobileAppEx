@@ -1,4 +1,8 @@
-<ion-content padding>
-
+<ion-content>
+  <section class="container cover-img">
+    <div text-center>
+      <img class="profile-img" src="{{(profileData|async)?.photo}}"  >
+    </div>
+  </section>
 </ion-content>
 <page-footer-bar></page-footer-bar>

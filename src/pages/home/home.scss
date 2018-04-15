@@ -2,7 +2,7 @@
     background-color:rgba(39, 24, 101, 0.82);
     img{
         align-items: center !important;
-        display: block;
+        
         margin-bottom: 2em;
         margin-top: .5em;
         opacity: .7;
@@ -18,12 +18,3 @@
     border-radius: 10px;
    
 }
-$break-large:860px;
-@media screen and (min-width: $break-large) {
-    .bg-img{
-        img{
-            align-items: center !important;
-            
-        }
-    }
-  }

@@ -10,17 +10,17 @@
     <ion-grid>
       <ion-row>
         <ion-col col-3>
-          <button ion-button clear class="img-btn" (click)="uploadImg()">
-            <img class="img-responsive img" src="{{(profileData|async)?.photo}}"  >
+          <button ion-button clear (click)="uploadImg()">
+            <img class="img-responsive img-circle" src="{{(profileData|async)?.photo}}"  >
           </button>
         </ion-col>
-        <ion-col col-7>
+        <ion-col col-6>
           <ion-searchbar
             (ionInput)="onInput($event)"
             (animated)="true">
           </ion-searchbar>
         </ion-col>
-        <ion-col col-2>
+        <ion-col col-3>
           <button ion-button clear class="icon-menu">
             <ion-icon name="menu"></ion-icon>
           </button>
