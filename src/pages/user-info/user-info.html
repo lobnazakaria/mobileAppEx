@@ -1,8 +1,11 @@
 <ion-content>
-  <section class="container cover-img">
-    <div text-center>
-      <img class="profile-img" src="{{(profileData|async)?.photo}}"  >
-    </div>
+  <section class="container">
+      <div class="images">
+          <img class="cover" src="{{(profileData|async)?.coverPhoto}}">
+          <span class="cov-cam"><ion-icon name="camera" class="camera"></ion-icon>Edit Cover</span>
+          <img class="profile" src="{{(profileData|async)?.photo}}">
+          <button class="btn btn-link" (click)="uploadImg()"><ion-icon name="brush" class="brush"></ion-icon></button>
+      </div>
   </section>
 </ion-content>
 <page-footer-bar></page-footer-bar>

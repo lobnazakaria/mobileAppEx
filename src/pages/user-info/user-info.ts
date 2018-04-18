@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angu
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { Profile } from '../../models/profile';
+import { UploadImgPage } from '../upload-img/upload-img';
 
 /**
  * Generated class for the UserInfoPage page.
@@ -17,7 +19,8 @@ import { AngularFireDatabase } from 'angularfire2/database';
   templateUrl: 'user-info.html',
 })
 export class UserInfoPage {
-
+  cover:Profile;
+  
   profileData :  Observable<any>;
    profileUrl:Observable<any>;
    constructor(
@@ -41,7 +44,7 @@ export class UserInfoPage {
        if(data && data.email && data.uid){
          debugger
          this.toastCtrl.create({
-           message:`welcome to APP, ${data.email}`,
+           message:`welcome to Future, ${data.email}`,
            duration:3000
          }).present();
          this.profileData=this.fireDatabase.object('profile/'+data.uid).valueChanges();
@@ -58,7 +61,7 @@ export class UserInfoPage {
    }
  
    uploadImg(){
-     this.navCtrl.setRoot(UserInfoPage);
+     this.navCtrl.push(UploadImgPage);
    }
  
 

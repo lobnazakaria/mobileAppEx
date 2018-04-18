@@ -4,5 +4,6 @@ export interface Profile {
     lastName:string;
     gender:string;
     photo:string;
+    coverPhoto:string;
     age:Date;
 }
