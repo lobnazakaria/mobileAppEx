@@ -14,5 +14,34 @@
 
 
 <ion-content padding>
+    <ion-item>
+        <ion-row>
+          <ion-col width-50>
+            <button ion-button color="danger" type="button" full round large (click)="takePhoto()">
+                        <ion-icon name="md-camera"></ion-icon>
+                    </button>
+          </ion-col>
+          <ion-col width-50>
+            <button ion-button color="secondary" type="button" full round large (click)="selectPhoto()">
+                        <ion-icon name="md-image"></ion-icon>
+                    </button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      <ion-item >
+      <div *ngIf="!clicked" text-center>
+        <img class="img-responsive" src="{{ (profileData|async)?.coverPhoto}}" />
+      </div>
+      </ion-item>
 
+
+      <form FormGroup="imageForm">
+        <div  *ngIf="clicked">
+          <ion-item>
+            <img class="img-responsive" src="{{myPhotoURL}}" />
+          </ion-item>
+          <button ion-button clear blocked  (click)="upload()">Upload</button>
+        </div>
+    </form>
 </ion-content>
+

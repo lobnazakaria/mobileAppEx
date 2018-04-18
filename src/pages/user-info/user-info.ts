@@ -5,6 +5,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Profile } from '../../models/profile';
 import { UploadImgPage } from '../upload-img/upload-img';
+import { UploadCoverImgPage } from '../upload-cover-img/upload-cover-img';
 
 /**
  * Generated class for the UserInfoPage page.
@@ -62,6 +63,9 @@ export class UserInfoPage {
  
    uploadImg(){
      this.navCtrl.push(UploadImgPage);
+   }
+   uploadCover(){
+     this.navCtrl.push(UploadCoverImgPage);
    }
  
 

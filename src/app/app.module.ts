@@ -18,6 +18,7 @@ import { Camera } from 'ionic-native';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserInfoPage } from '../pages/user-info/user-info';
 import { FooterBarPage } from '../pages/footer-bar/footer-bar';
+import { UploadCoverImgPage } from '../pages/upload-cover-img/upload-cover-img';
 const firebaseAuth={
   apiKey: "AIzaSyCqhGKujLWQ6XqzdVYSpoNTaBzjE1eKidE",
     authDomain: "mobileappex.firebaseapp.com",
@@ -37,6 +38,7 @@ const firebaseAuth={
     CreateProfilePage,
     UploadImgPage,
     UserInfoPage,
+    UploadCoverImgPage,
     FooterBarPage
   ],
   imports: [
@@ -58,6 +60,7 @@ const firebaseAuth={
     CreateProfilePage,
     UploadImgPage,
     UserInfoPage,
+    UploadCoverImgPage,
     FooterBarPage
   ],
   providers: [
