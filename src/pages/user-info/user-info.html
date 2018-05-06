@@ -1,5 +1,9 @@
+
+
 <ion-content>
   <section class="container">
+        <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
       <div class="images">
           <img class="cover" src="{{(profileData|async)?.coverPhoto}}">
           <button class="cov-cam btn btn-link" (click)="uploadCover()"><ion-icon name="camera" class="camera"></ion-icon>Edit Cover</button>
@@ -15,11 +19,11 @@
         <button class="msg-btn" ion-button outline><ion-icon class="user-msg" name="mail"></ion-icon>رسالة</button>
      </div>
   </section>
-  <hr>
-  <section class="container">
+
+  <section class="container personal-info-sec">
     <ion-list>
         <ion-list-header>
-            Info
+            <span>Personal Information</span>
         </ion-list-header>
         <ion-item>
             <ion-icon name="body" item-start></ion-icon>
@@ -27,11 +31,15 @@
             <ion-icon name="brush" item-end></ion-icon>
         </ion-item>
         <ion-item>
-                <ion-icon name="body" item-start></ion-icon>
-                {{(profileData|async)?.firstName}} {{(profileData|async)?.lastName}}
+            <ion-icon name="calendar" item-start></ion-icon>
+             {{(profileData|async)?.age}} 
+            <ion-icon name="brush" item-end></ion-icon>
+        </ion-item>
+        <ion-item>
+                <ion-icon name="female" item-start></ion-icon>
+                 {{(profileData|async)?.gender}} 
                 <ion-icon name="brush" item-end></ion-icon>
         </ion-item>
-        <ion-item>Blade Runner</ion-item>
     </ion-list>
   </section>
   

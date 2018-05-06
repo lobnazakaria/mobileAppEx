@@ -1,4 +1,20 @@
 /*..........................*/
+.searchbar-md {
+    position: absolute;
+    background: inherit;
+    padding: 9px;
+    z-index: 2;
+}
+.searchbar-input-container {
+    position: relative;
+    display: block;
+    -webkit-flex-shrink: 1;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    width: 98%;
+}
+
+
 /*..........................*/
 .images{
     position: relative;   
@@ -95,6 +111,9 @@
 }
 .user-msg{
     margin-right: 15px;
+}
+.personal-info-sec{
+    margin-bottom: 6em;
 }
 /*..........................*/
 /*..........................*/
