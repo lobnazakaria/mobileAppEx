@@ -2,10 +2,38 @@
   <section class="container">
       <div class="images">
           <img class="cover" src="{{(profileData|async)?.coverPhoto}}">
-          <button class="cov-cam btn btn-link" (click)="uploadCover()"><ion-icon name="camera" class="camera"></ion-icon>Edit Cover</button>>
+          <button class="cov-cam btn btn-link" (click)="uploadCover()"><ion-icon name="camera" class="camera"></ion-icon>Edit Cover</button>
           <img class="profile" src="{{(profileData|async)?.photo}}">
-          <button class="btn btn-link" (click)="uploadImg()"><ion-icon name="brush" class="brush"></ion-icon></button>
+          <button class="btn btn-link" (click)="uploadImg()"><ion-icon name="brush" class="brush"></ion-icon></button><br>
       </div>
+      <span class="userName" text-center>{{(profileData|async)?.username}}<br>({{(profileData|async)?.firstName}} {{(profileData|async)?.lastName}})</span><br>
+     <div text-center>
+         <button ion-button clear><ion-icon class="user-pro" name="mail"></ion-icon></button>
+         <button ion-button clear><ion-icon class="user-pro" name="people"></ion-icon></button>
+     </div>
+     <div text-center class="msg">
+        <button class="msg-btn" ion-button outline><ion-icon class="user-msg" name="mail"></ion-icon>رسالة</button>
+     </div>
   </section>
+  <hr>
+  <section class="container">
+    <ion-list>
+        <ion-list-header>
+            Info
+        </ion-list-header>
+        <ion-item>
+            <ion-icon name="body" item-start></ion-icon>
+            {{(profileData|async)?.firstName}} {{(profileData|async)?.lastName}}
+            <ion-icon name="brush" item-end></ion-icon>
+        </ion-item>
+        <ion-item>
+                <ion-icon name="body" item-start></ion-icon>
+                {{(profileData|async)?.firstName}} {{(profileData|async)?.lastName}}
+                <ion-icon name="brush" item-end></ion-icon>
+        </ion-item>
+        <ion-item>Blade Runner</ion-item>
+    </ion-list>
+  </section>
+  
 </ion-content>
 <page-footer-bar></page-footer-bar>

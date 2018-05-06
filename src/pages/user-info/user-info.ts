@@ -36,14 +36,14 @@ export class UserInfoPage {
    getStyle(){
      if (true){
        const style = `display: none`;
-     return style;
+        return style;
      }
    }
    ionViewDidLoad() {
      console.log(this.profileData);
      this.fireAuth.authState.take(1).subscribe(data =>{
        if(data && data.email && data.uid){
-         debugger
+         
          this.toastCtrl.create({
            message:`welcome to Future, ${data.email}`,
            duration:3000
